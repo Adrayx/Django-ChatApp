@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import room.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path(r'scrumboard/', include('scrumboard.urls'))
+    path(r'scrumboard/', include('scrumboard.urls')),
+    path('', include('core.urls')),
+    path('rooms/', include('room.urls')),
+    path('create_room/', views.create_room, name='create_room'),
 ]

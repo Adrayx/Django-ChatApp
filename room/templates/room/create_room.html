@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Create Room | {% endblock %}
+
+{% block content %}
+    <div class="p-10 lg:p-20 text-center">
+        <h1 class="text-3xl lg:text-6xl text-white">Create Room</h1>
+    </div>
+
+    <form method="post" action="." class="lg:w-1/4 px-4 mx-auto">
+        {% csrf_token %}
+{#        <div>#}
+{#            {{ form.as_p }}#}
+{#        </div>#}
+        <div class="mb-5">
+            <label class="text-white">Room Name</label>
+
+            <input type="text" name="name" class="w-full mt-2 px-4 py-2" placeholder="Your room name...">
+        </div>
+        <div class="mb-5">
+            <label class="text-white">Slug</label>
+
+            <input type="text" name="slug" class="w-full mt-2 px-4 py-2" placeholder="Slug of the room...">
+        </div>
+        <button class=" item-center px-5 py-3 rounded-xl text-white bg-red-800 hover:bg-red-700">Create</button>
+    </form>
+
+
+{% endblock %}
